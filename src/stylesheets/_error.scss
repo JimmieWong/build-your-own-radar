@@ -1,22 +1,54 @@
+@import 'colors';
+@import 'layout';
+
 .error-container {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 48px;
 
   .error-container__message {
-    width: 60%;
-    display: inline-block;
+    @if not $UIRefresh2022 {
+      width: 60%;
+      display: inline-block;
+    }
+    @if $UIRefresh2022 {
+      p:first-child {
+        color: $error-text;
+      }
+      p {
+        margin: 0;
+      }
+    }
   }
 
-  .error-title{
+  .error-title {
     font-weight: 400;
   }
 
-  .error-subtitle{
+  .error-subtitle {
     margin-top: -10px;
   }
 
-  .switch-account-button{
-    margin: 0px 0px 35px 0px;
+  .switch-account-button {
+    margin: 0 0 35px 0;
+  }
+
+  .switch-account-button-newui {
+    background-color: $button-normal;
+    color: $white;
+    font-size: 20px;
+    font-family: $baseFontFamily;
+    line-height: 24px;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    border: none;
+    text-transform: none;
+    cursor: pointer;
+    &:focus {
+      outline: auto;
+    }
   }
 }
 
@@ -30,7 +62,6 @@
   .message p {
     font-size: 25px;
   }
-
 }
 
 .support {
@@ -44,7 +75,6 @@
 }
 
 .support-link {
-
   font-size: 26px;
   padding: 20px;
 
